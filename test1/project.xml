@@ -1,0 +1,18 @@
+<Project DefaultTargets="Clean;Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <AssemblyName>MSBuildSample</AssemblyName>
+        <OutputPath>Bin\</OutputPath>
+        <OutputAssembly>$(OutputPath)$(AssemblyName).exe</OutputAssembly>
+    </PropertyGroup>
+    <ItemGroup>
+        <Compile Include="hello.cs" />
+    </ItemGroup>
+    <Target Name="Rebuild" DependsOnTargets="Clean;Build" />
+    <Target Name="Clean">
+        <Delete Files="$(OutputAssembly)" />
+    </Target>
+    <Target Name="Build">
+        <MakeDir Directories="$(OutputPath)" Condition="!Exists('$(OutputPath)')" />
+        <Csc Sources="@(Compile)" OutputAssembly="$(OutputAssembly)" />
+    </Target>
+</Project>
