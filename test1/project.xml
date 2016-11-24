@@ -11,8 +11,11 @@
     <Target Name="Clean">
         <Delete Files="$(OutputAssembly)" />
     </Target>
-    <Target Name="Build">
+    <Target Name="Build" Inputs="@(Compile)" Outputs="$(OutputAssembly)">
         <MakeDir Directories="$(OutputPath)" Condition="!Exists('$(OutputPath)')" />
-        <Csc Sources="@(Compile)" OutputAssembly="$(OutputAssembly)" />
+        <Csc Sources="@(Compile)" OutputAssembly="$(OutputAssembly)">
+            <Output TaskParameter="OutputAssembly" ItemName="Executable" />
+        </Csc>
+        <Message Text="The output file is @(Executable)" />
     </Target>
 </Project>
