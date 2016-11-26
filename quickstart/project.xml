@@ -2,6 +2,16 @@
     <ItemGroup>
         <src Include="../**/*.xml" />
     </ItemGroup>
+    <PropertyGroup>
+        <Name>static</Name>
+    </PropertyGroup>
+    <Target Name="Override">
+        <Message Text="$(Name)" />
+        <PropertyGroup>
+            <Name>dynamic</Name>
+        </PropertyGroup>
+        <Message Text="$(Name)" />
+    </Target>
     <Target Name="PrintWellKnownMetadata">
         <Message Text="%40(src->'%25(Identity)'): @(src->'%(Identity)')" />
         <Message Text="%40(src->'%25(FullPath)'): @(src->'%(FullPath)')" />
