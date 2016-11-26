@@ -1,0 +1,20 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003"
+            DefaultTargets="Log"
+            ToolsVersion="15.0">
+    <Target Name="Log">
+        <Message Text="MSBuildExtensionsPath : $(MSBuildExtensionsPath)" />
+        <Message Text="MSBuildProgramFiles : $(MSBuildProgramFiles)" />
+        <Message Text="MSBuildProgramFiles32 : $(MSBuildProgramFiles32)" />
+        <Message Text="MSBuildProgramFiles64 : $(MSBuildProgramFiles64)" />
+        <Message Text="MSBuildProjectDefaultTargets : $(MSBuildProjectDefaultTargets)" />
+        <Message Text="MSBuildProjectDirectory : $(MSBuildProjectDirectory)" />
+        <Message Text="MSBuildProjectDirectoryNoRoot : $(MSBuildProjectDirectoryNoRoot)" />
+        <Message Text="MSBuildProjectExtension : $(MSBuildProjectExtension)" />
+        <Message Text="MSBuildProjectFile : $(MSBuildProjectFile)" />
+        <Message Text="MSBuildProjectFullPath : $(MSBuildProjectFullPath)" />
+        <Message Text="MSBuildProjectName : $(MSBuildProjectName)" />
+        <Message Text="MSBuildStartupDirectory : $(MSBuildStartupDirectory)" />
+        <Message Text="MSBuildToolsPath : $(MSBuildToolsPath)" />
+        <Message Text="MSBuildToolsVersion : $(MSBuildToolsVersion)" />
+    </Target>
+</Project>
